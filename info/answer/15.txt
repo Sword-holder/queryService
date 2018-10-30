@@ -1,0 +1,29 @@
+
+如果Domino是作为服务方式启动的，那么在你通过终端服务远程连接到服务器时Domino控制台是不可见的。终端服务创建的远程会话不包括Domino控制台。请注意
+即使是使用管理员账号，本地远程桌面终端也会为你创建一个用户会话。
+
+为了暂时解决这个问题，请使用其他的远程连接工具或者直接访问物理服务器。
+
+更多信息，请参考文档 #1259920，“Domino进程宕机，错误'Panic: Unable to complete restart 
+processing'，但是Domino服务器仍然运行”。
+
+对Windows服务器2003和RDP6.x客户端（Windows XP pre SP3）,你可以使用/console来和服务器之间建立物理本地会话。这被称作会
+话0。
+在Windows服务器2008上，0会话是为服务保留的非交互式会话。
+
+新的RDP客户端-6.1-已经在以下操作系统上提供：
+
+•       Windows Server 2008
+•       Windows Vista Service Pack 1 (SP1) 
+•       Windows XP Service Pack 3 (SP3)
+
+出于管理的目的，你可以使用新的/admin参数而不是/console来远程连接Windows Server 2008基本版服务器，
+
+相关技术文档：
+How to Connect to and Shadow the Console Session with W - 
+http://support.microsoft.com/kb/278845/en-us
+Login using Terminal Services results in error 'The Not - Document 1233714
+Domino Process crashes with 'Panic: Unable to complete  - Document 1259920
+
+英文原文链接：
+http://www.ibm.com/support/docview.wss?rs=899&uid=swg21209819

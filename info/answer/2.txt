@@ -1,0 +1,6 @@
+
+这个问题在 Domino 6.x 中已得到了解决。
+
+对于 Domino 5.x 的用户，可以在文档更新完毕后，打开该文档，做一点修改，然后保存，这样原来的读者域和作者域都会恢复成适当的类型。如果文档较多，不能一一
+手工打开、保存，可以再创建一个代理，调用 @Command(ToolsRefreshSelectedDocs) 或 
+@Command(ToolsRefreshAllDocs)，对所选文档或所有文档进行刷新，使读者域和作者域恢复成适当的类型。

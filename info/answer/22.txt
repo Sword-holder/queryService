@@ -1,0 +1,13 @@
+Out of Office的例外处理中，您可以阻止回复所有的因特网地址(Internet Addresses)，其中可能会包括垃圾邮件，或不回复包含特定主题短语
+(subject phrases)的邮件。目前，Out Of Office代理没有提供具体的垃圾邮件例外处理，因为垃圾邮件千变万化，识别起来是有难度的。一个产品
+改进请求已经提交到质量工程部作为SPR＃ KMUR6QYE9H 。    
+
+您还可以设置一个邮件规则，从您的邮件文件中阻止垃圾邮件。邮件规则可以删除垃圾邮件，所以当Out Of Office代理运行时，它们已不存在于邮件文件中。或者，您
+的服务器管理员可以在Domino服务器中设置垃圾邮件过滤。欲了解更多信息，请在Notes Help中参阅主题“Filtering new mail using 
+rules”和“Using blacklists and whitelists to filter mail”。
+
+该文档基于下面的软件问题报告（SPR）：
+KMUR6QYE9H
+
+英文原文链接：
+http://www.ibm.com/support/docview.wss?rs=899&uid=swg21245369

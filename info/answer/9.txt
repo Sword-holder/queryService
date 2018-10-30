@@ -1,0 +1,21 @@
+这个问题已经由质量工程师报告，并且已经在Domino 6.0.3 和 Domino 6.5版本上得到解决，更多关于升级Notes/Demino的信息可以在升级中
+心站点查看。
+Lotus Notes and Domino Release 6.0.3 补丁列表摘录 ( 参考http://www.lotus.com/ldd):
+ 
+SSL
+l SPR# WRAY5HVRUM - Only display messages about SSL handshake failures if 
+session or thread logging is enabled.
+
+在先前的6.03和6.5版本中，当微软的IE5.x或者6.0版本浏览器使用SSL进行连接的时候，错误信息就会出现在日志中；如果你使用 Netscape浏览器的
+话，错误就不会出现。Domino认为这种错误是由特定的浏览器对SSLv3规范做出变动而导致的，例如微软的IE 浏览器。这些客户端会在SSL 
+handshake中的时候发送一种结束（FIN）消息。Domino服务器就认为这种FIN消息是一种handshake错误，因为这种客户端并不遵循 SSLv3规
+范。
+
+对于Domino6.0.3，6.5和以后的版本，也包括7.0，这些错误信息只有当HTTP日志线程被激活时才会发出。如果不想看到这些信息，可以将日志线程禁用，因为
+日志线程本身仅仅是作为短期故障解决工具而使用的。
+
+该文档基于软件问题报告（SPR）：
+WRAY5HVRUM
+
+英文原文链接：
+http://www.ibm.com/support/docview.wss?rs=899&uid=swg21107534 

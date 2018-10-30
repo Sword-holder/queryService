@@ -1,0 +1,1 @@
+在Domino6的Notes.ini文件中与事务日志有关的参数

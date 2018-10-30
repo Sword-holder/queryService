@@ -1,0 +1,2 @@
+使用SMTP_Config_Update_Interval参数来观察SMTP的配置是否被更新
+Domino SMTP服务器多长时间会检查SMTP配置信息是否被更新呢？如何实现的呢？

@@ -1,0 +1,1 @@
+如何重建消息跟踪数据库（MTSTORE.NSF）和MTDATA子目录？

@@ -1,0 +1,50 @@
+尊敬的客户，您好！ 
+
+　　您收到这封邮件是因为您是曾经和IBM技术支持中心联系过的Lotus Notes/Domino用户。如果您不想收到这类邮件，可以发送邮件至
+lotusfaq@cn.ibm.com，并在邮件主题中注明 “退订 <您需要退订的邮件地址>” 。 
+
+　　这封邮件包含您可能关心的关于Lotus Notes/Domino产品技术信息的链接。您可以点击链接访问我们的网站来获得这些信息。这些信息将帮助您快速解决可
+能遇到的Lotus Notes/Domino产品问题。您可以在如下链接找到之前发送过的技术知识文档的内容：
+http://www-900.ibm.com/cn/support/viewdoc/detail?DocId=1897668B27001 
+
+这期的邮件包含如下主题： 
+
+1. 热点问题：Mime向CD转换会导致Domino 8.0.1宕机在MIMEGetEntityDBObjectName函数上
+2. 本月常见问答 （中文网站） 
+3. 常用链接 
+4. 反馈 
+
+
+热点问题：Mime向CD转换会导致Domino 8.0.1宕机在MIMEGetEntityDBObjectName函数上
+摘要：Domino服务器在尝试将格式错误的邮件从MIME向CD格式转换的时候出现宕机情况。问题发生在router任务上，也可能发生在加载任务上，例如
+BES（Blackberry 企业服务器）和NNTask（Norton防病毒软件）。
+链接：http://www-900.ibm.com/cn/support/viewdoc/detail?DocId=1897668H07000
+
+
+本月常见问答 （中文网站） 
+标题：如果CLASSPATH没有设置Notes客户端可能无法连接到Domino服务器
+链接：http://www-900.ibm.com/cn/support/viewdoc/detail?DocId=1897677L12000
+
+标题：如何重新创建用户的ID文件
+链接：http://www-900.ibm.com/cn/support/viewdoc/detail?DocId=1897668A03000
+
+标题：当退出Telnet的会话后，在UNIX上运行的Domino会出现挂起的问题
+链接：http://www-900.ibm.com/cn/support/viewdoc/detail?DocId=1827667G11000
+
+标题：如何删除和创建全文索引
+链接：http://www-900.ibm.com/cn/support/viewdoc/detail?DocId=1897668E05001
+
+标题：Domino 管理进程的"Accelerated Create Replica"(快速创建复本)功能什么时候起作用
+链接：http://www-900.ibm.com/cn/support/viewdoc/detail?DocId=1897668H04000
+
+
+常用链接 
+您可以在下面地址查找到Lotus Notes/Domino的相关常用链接。 
+http://www-900.ibm.com/cn/support/viewdoc/detail?DocId=1897668B27001
+
+
+反馈 
+如果您对这类邮件有任何意见和建议，您可以发送邮件至lotusfaq@cn.ibm.com告诉我们。 
+
+顺祝商祺 
+IBM Lotus Notes/Domino技术支持团队 

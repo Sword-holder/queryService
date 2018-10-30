@@ -1,0 +1,11 @@
+按照设计，Traveler客户端和同步的数据存放在手机的内存中。
+
+但是，如果您的设备是Windows Mobile的操作系统，您可以将附件存放在存储卡/内存卡中。这是Windows Mobile设备的操作系统所具有的功能，并不
+是由Lotus Notes Traveler所提供的。此设置根据Windows Mobile设备的不同而有所变化，以下是基本的操作步骤：
+
+1. 打开Lotus Notes Traveler的邮箱
+2. 菜单-》
+3. 工具-》
+4. 选项-》
+5. 存储标签
+6. 启用选项：当可用时，使用此存储卡来存储附件。

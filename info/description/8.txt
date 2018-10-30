@@ -1,0 +1,2 @@
+当用户试图将假日信息导入到IBM ® Lotus Notes / Domino®中邮件文件的日历中时，Notes客户端报错："数据库中已存在一个ID相同的文档
+（Notes Error: Database already contains a document with this ID）" 。

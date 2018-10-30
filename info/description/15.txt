@@ -1,0 +1,2 @@
+选择安装成Windows服务之后无法看到Domino服务器控制台
+你把Lotus® Domino®安装成了Microsoft® Windows® 2003系统上的服务。虽然你选择了“允许应用程序与桌面交互”，Domino服务器控制台仍然不可见

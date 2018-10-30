@@ -1,0 +1,7 @@
+启动 HTTP 任务时报错：“Error loading Web SSO Configuration document”
+Error loading Web SSO Configuration document
+您启用 Domino 服务器做多服务器会话验证，也称作单点用户登录 (SSO), 并且创建了 Web SSO 配置文档。当您启动 HTTP 任务的时候，您却注意
+到下面的错误：
+"HTTP Server: Error loading Web SSO Configuration 'LtpaToken' (Single Sign-On 
+configuration is invalid)" 
+

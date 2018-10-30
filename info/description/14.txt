@@ -1,0 +1,30 @@
+使用微软终端服务或微软远程桌面启动Sametime服务器的时候，用户发现会议服务和一些社区服务（典型的有STDirectory或STUsers）没有加载成功。这
+使得用户无法登录到Sametime客户端，会议也无法正常启动。
+用户登录到Sametime客户端的时候，会看到下面的错误信息：
+
+"Unable to access Sametime.  Please try again later."
+
+当用户参加会议的时候，会看到下面的错误：
+
+"The meeting is not starting.  Please contact your system administrator."
+
+在Notes的日志文件中（log.nsf）还经常能看到下面的输出信息：
+
+01:11:15 PM  Sametime Server: Starting services
+01:11:16 PM  Addin: Agent printing: 
+com.lotus.sametime.admin.authentication.AccessControlServlet: init
+01:11:16 PM  Addin: Agent printing: 
+com.lotus.sametime.admin.AdminXPathRequestServletJAXP: init
+01:11:17 PM  Addin: Agent printing: 
+com.lotus.sametime.meetingmanagement.remote.servlet.MMAPIServlet: init
+01:11:17 PM  Addin: Agent printing: loaded [MeetingManagement.properties] from 
+file system.
+01:11:17 PM  Addin: Agent printing: 
+com.lotus.sametime.calendar.NotesCalendarServlet: init
+01:11:17 PM  Addin: Agent printing: 
+com.lotus.sametime.materials.servlets.FileUploadServlet: init
+01:11:17 PM  Addin: Agent printing: 
+com.lotus.sametime.materials.servlets.RAPFileServlet: init
+01:11:17 PM  HTTP Web Server started
+01:11:20 PM  Database Server started
+01:11:34 PM  Sametime Server: Running

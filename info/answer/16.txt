@@ -1,0 +1,13 @@
+在 iNotes 签名中可以使用 HTML，通过在 HTML 标记周围两端添加 [] 以标记文本为内置HTML。
+如果你在签名中要使用一个图片，这个文件必须位于 iNotes 客户端能够访问的一个 Web 服务器上。例如，你可以在 Domino 服务器的 
+domino/html 目录下储存这个图像，然后这样引用这个图片，例如：http://inotes.example.com/image.jpg
+下面列出了一段包含公司 Logo 签名的 HTML 代码：
+
+[ <html><b>John Doe</b><br><i>Example Corp, Inc.<br>jdoe@example.com</i><img 
+src="http://inotes.example.com/examplelogo.jpg"></img></html> ]
+
+(请注意：在您设置包含图片的签名时，在左括号"["之后，和右括号"]"之前不允许保留空格的。此文档中的样例添加空格，目的是为了便于读者查看和复制 HTML 源代
+码，而不是以嵌入 HTML 形式显示为图片。)
+
+要在签名中使用内嵌 HTML，Domino 服务器必须添加 notes.ini 参数 "iNotes_WA_AllowPassThruHtml=1"，这个参数
+是 Domino 8.5 和 8.0.2 以后引入的，此参数对于服务器性能没有负面影响。

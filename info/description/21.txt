@@ -1,0 +1,55 @@
+http服务器验证用户的时候引发宕机
+
+当http服务器验证用户的时候引发宕机，导致宕机的 call stack 为:
+############################################################
+### thread 22/61: [   nhttp:  08ac:  085c] FATAL THREAD (Panic)
+### FP=0x3e00a6f0, PC=0x7c82ed54, SP=0x3e00a680
+### stkbase=0x3e010000, total stksize=262144, used stksize=22912
+### EAX=0x3bbe0000, EBX=0x3e00b2c0, ECX=0x3e0099ec, EDX=0x00002000
+### ESI=0x00000b74, EDI=0x00000000, CS=0x0000001b, SS=0x00000023
+### DS=0x00000023, ES=0x00000023, FS=0x0000003b, GS=0x00000000 Flags=0x00000293
+############################################################
+ [ 1] 0x7c82ed54 ntdll.KiFastSystemCallRet+0 (b74,927c0,0,3e00aea0)
+ [ 2] 0x77e6ba12 kernel32.WaitForSingleObject+18 (b74,927c0,3e00b634,3e00b2e6)
+@[ 3] 0x601a2e75 nnotes.FRSendCommandToService+789 
+(3e00aec0,3e00b2c0,3e00b2e6,5)
+@[ 4] 0x601a3aaf nnotes.OSRunExternalScript@8+1055 (258,1)
+@[ 5] 0x601a402f nnotes.FRTerminateWindowsResources+975 (1,1010,1,0)
+@[ 6] 0x601a43f8 nnotes.OSFaultCleanupExt@24+888 (1316a14,1010,0,0,0,3e00b95c)
+@[ 7] 0x601a447a nnotes.OSFaultCleanup@12+26 (0,1010,0)
+@[ 8] 0x601af924 nnotes.OSNTUnhandledExceptionFilter@4+276 (3e00c994)
+@[ 9] 0x601740e6 nnotes.Panic@4+534 (60c83ff6)
+@[10] 0x601784c3 nnotes.LockHandleExt@16+275 (0,3e00c9d8,3e00c9dc,0)
+@[11] 0x60178663 nnotes.OSLockObjectExt@8+35 (60f32dc8,60f32e7a)
+@[12] 0x6000295e nnotes.OSLockObject@4+14 (0)
+@[13] 0x6009c1c6 nnotes.NIFCGAccess@8+38 (3cc52ae4,0)
+@[14] 0x6067c98b nnotes.ILUpdateCollection@4+27 (3cc52ae4)
+@[15] 0x6067d648 nnotes.ILGetServerConfigInformation@4+936 (3e00cda8)
+@[16] 0x6063c684 nnotes.NABLookup::LookupBasicUser+452 
+(40e1523c,677108,40e1503c,5)
+@[17] 0x00418088 NINOTES.AuthUser::LookupPassword+280 
+(3c71c018,40e16018,40e15018,40e15018)
+@[18] 0x00419070 NINOTES.AuthUser::Authenticate+848 (3c71c018,1,0,40e1a018)
+@[19] 0x00419408 NINOTES.AuthUser::AuthenticateSession+56 
+(40e1e229,40e1e238,3c71c018,40e1a018)
+@[20] 0x00489dae NINOTES.CmdHandler::HandleLoginUserCmd+350 
+(0,0,40e1a018,2965d018)
+@[21] 0x00444602 NINOTES.CmdHandlerBase::PrivHandle+658 (40e1a018,0,0,2965d018)
+@[22] 0x00442a59 NINOTES.CmdHandler::PrivHandle+121 
+(40e1a018,3cc29e54,40e1a018,0)
+@[23] 0x00443698 NINOTES.CmdHandler::Handler+216 
+(40e1a018,2965d018,3e00f1a4,3e00f1a4)
+@[24] 0x00439a5a NINOTES.Cmd::Execute+58 (3cc29ff0,3cc29e44,3cc299f0,60002a11)
+@[25] 0x00481618 NINOTES.InotesHTTPAuthenticate+344 
+(3cc29e54,4,3cc29b78,3cc29b58)
+@[26] 0x10015116 nhttpstack.HTInotesRequest::Authenticate+70 
+(3cc29b58,3cc299f0,0,10021d06)
+@[27] 0x100110bc nhttpstack.HTRequestExtContainer::Authenticate+108 
+(0,2a5daebb,0,6d616e2f)
+@[28] 0x10027971 nhttpstack.HTSession::StartRequest+897 
+(2a5daec7,2a5daebb,0,830)
+@[29] 0x1002ee9f nhttpstack.HTWorkerThread::CheckForWork+399 
+(18e2ee8,2a5daebb,3,1002b91a)
+@[30] 0x1002f3f8 nhttpstack.HTWorkerThread::ThreadMain+88 (2a5daebb,0,0,0)
+@[31] 0x600fe6ef nnotes.ThreadWrapper@4+175 (0)
+ [32] 0x77e66063 kernel32.GetModuleFileNameA+235 (0,0,0,0)

@@ -1,0 +1,2 @@
+使用Lotus Notes Traveler时有什么数据可以存放在内存卡/存储卡中？
+当使用Lotus Notes Traveler时，有什么数据可以存放在内存卡/存储卡中呢？

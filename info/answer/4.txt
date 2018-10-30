@@ -1,0 +1,24 @@
+尽管 IBM Notes 9.0.X 在 Mac OS X 宕机时创建的 NSD 日志包含了一些有用的信息，但不会包含全部的宕机线程。
+
+在 Notes 客户端宕机时，可以收集以下文件夹内容以供技术支持团队进行分析：
+
+Apple宕机日志:
+
+请打开 Finder，按住 alt Option 键，前往：电脑 > 资源库 > Application Support > CrashReporter 
+
+NSD日志: 	               
+前往：个人 > 资源库 > Application Support > IBM Notes Data > IBM_Technical_Support 
+
+Java日志:
+
+前往：个人 > 资源库 > Application Support > IBM Notes Data > Expeditor
+
+Notes Preferences文件（相当于 Windows 平台的 notes.ini）:
+
+前往：个人 > 资源库 > Preferences > Notes Preferences 
+
+变通方法: 
+
+当 Notes 标准配置频繁宕机时，用户可以尝试编辑 Notes Preferences，加入一行。
+UseBasicNotes=1 
+以切换并使用 Notes 基本配置。

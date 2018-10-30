@@ -1,0 +1,23 @@
+这个是因为当服务器试图获取因特网锁定（Internet Lockout）相关的信息时，引发宕机。
+用户在服务器的 notes.ini 中添加了下面的调试参数：
+
+Console_log_enabled=1
+DEBUG_THREADID=1
+webauth_trace_verbose=1
+debug_nif=1
+
+重新启动服务器之后收集日志，发现控制台上有下面的错误信息：
+
+nhttp: ILSrvConfig [ILSrvConfig] Error with internet lockout: Entry not found 
+in index                            
+解决方案:
+
+执行下面的操作之后，服务器就稳定了。
+
+-在服务器配置文档中禁用因特网锁定功能。
+-运行命令 "load updall names.nsf -T "($ServerConfig)" -R " , 重建 serverconfig 视图的索
+引。                                  
+
+您也可以删除当前的因特网锁定数据库 (inetlockout.nsf) ，然后使用模板 inetlockout.ntf 创建一个新的数据库，然后再启用因特网锁
+定功能。
+这个问题已经提交给质量管理委员会，问题编号为 SPR # RSHA7QAG24。

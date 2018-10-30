@@ -1,0 +1,31 @@
+
+1。管理员参考Sametime 7.5.x Information Center中介绍的如下文档，启用了浏览器的Java控制台：
+
+Title: How to turn on additional debugging for the Sametime Meeting Room Client 
+and Broadcast Client
+Doc #: 1086819
+URL: http://www.ibm.com/support/docview.wss?rs=203&uid=swg21086819
+
+发现在浏览器的Java控制台里有如下的错误信息：
+HttpHybridReader.1     HttpRequestQueue  processRequest: read error: EXCEPTION: 
+java.net.SocketException: Software caused connection abort: recv failed
+
+HttpHybridReader.1      HttpHybridConnection requestError: 2 failures in 1578 ms
+
+HttpHybridReader.1      HttpHybridConnection requestError: wait 1000 ms to 
+retry request
+
+HttpHybridReader.1      HttpHybridConnection requestError: EXCEPTION: 
+java.lang.InterruptedException: sleep interrupted
+
+
+2。上面的错误信息是由于在操作系统上的主机名与管理员配置sametime是使用的主机名不同引起的。
+
+例如：
+操作系统上的主机名是：RTD2-345-2006
+主要的DNS后缀是：acme.com
+
+而服务器文档中，主机名设置为：st.acme.com
+为了能够让用户可以正常参加会议，需要启动“联编到主机名”。如下图：
+
+

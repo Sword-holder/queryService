@@ -1,0 +1,41 @@
+很遗憾，直接使用公式无法显示当前视图中选中文档的数量， 但是我们可以结合LotusScript和公式显示当前视图中选中文档的数量， 方法如下：
+
+1.创建一个LotusScript代理，获取当前视图中选中文档的数量，并将结果存入简要表文档中。（参照文档后附上的LotusScript代理的代码）
+2.创建一个公式代理，从简要表文档中获取步骤1写入的数字。（参照文档后附上的公式代理的代码）
+3.创建一个操作，先后调用LotusScript代理和公式代理。（参照文档后附上的操作的代码）
+
+
+注意：以下样例中的<>符号中的代码需要根据配置的环境调整，如<简要表表单名>需要被替换成真正的简要表表单名， 如MyProfile。
+
+LotusScript代理的代码：
+
+	Dim nuw As New NotesUIWorkspace 
+	Dim nuv As NotesUIView
+	Dim nsn As New NotesSession 
+	Dim ndb As NotesDatabase
+	Dim ndo As NotesDocument
+	Dim ndc As NotesDocumentCollection
+	Dim nit As NotesItem
+	Dim int_count As Integer
+	
+	Set ndb = nsn.CurrentDatabase
+	Set nuv = nuw.CurrentView
+	Set ndc = nuv.Documents
+	int_count = ndc.Count
+	
+	Set ndo = ndb.GetProfileDocument("<简要表表单名>",nsn.Username)
+	Set nit = ndo.ReplaceItemValue("<域名>",int_count)
+	Call ndo.Save(False,False)
+
+
+公式代理的代码：
+
+	SelectedCount:=@GetProfileField("<简要表表单名>";"<域名>";@UserName);
+	@Prompt([OK];"Notice";"The number of documents selected is 
+"+@Text(SelectedCount))
+
+操作的代码：
+	@Command([ToolsRunMacro];"<LotusScript代理名>");
+	@Command([ToolsRunMacro];"<公式代理名>")
+
+

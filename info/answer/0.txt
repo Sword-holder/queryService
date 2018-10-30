@@ -1,0 +1,12 @@
+要重建消息跟踪数据库（MTSTORE.NSF）和MTDATA子目录，可以按照以下步骤进行：
+1、退出Domino管理客户端；
+2、在服务器控制台输入命令“Tell Router Quit”;
+3、在操作系统级别删除MTDATA子目录，MTDATA是Domino数据路径的子目录。
+如果用户看到警告说此目录正在被使用，管理员可以在服务器的控制台输入以下命令：
+dbcache flush
+并再次尝试删除此子目录
+4、在服务器控制台输入命令"Load Router";
+5、启用Domino管理客户端，点击“文件”选项卡。用户会看到新生成的MTDATA子目录，里面包含新创建的MTSTORE.NSF。
+
+重启Router任务同时也重启了MTCollector任务。当在服务器配置文档中启用了消息跟踪且Router任务被重启时，如果发现MTDATA子目录不存在，则会
+被重新创建。

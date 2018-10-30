@@ -1,0 +1,3 @@
+您在Lotus® Domino® 6.0上配好SSL后，然后在Notes日志中发现充斥着SSL握手失败信息，错误代码都是4165。完整的错误信息如下：
+"HTTP Server: SSL handshake failure, IP address [10.0.0.1], Keyring 
+[selfcert.kyr], [SSL Error: Network IO error], code [4165]"

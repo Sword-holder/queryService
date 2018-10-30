@@ -1,0 +1,81 @@
+尊敬的客户，您好！ 
+
+　　您收到这封邮件是因为您是曾经和IBM技术支持中心联系过的Lotus Notes/Domino用户。如果您不想收到这类邮件，可以发送邮件至
+lotusfaq@cn.ibm.com，并在邮件主题中注明 “退订 <您需要退订的邮件地址>” 。 
+
+　　这封邮件包含您可能关心的关于Lotus Notes/Domino产品技术信息的链接，这些信息是我们Lotus技术支持中心的工程师们在日常的支持工作中总结的用
+户经常遇到的问题。您可以点击链接访问我们的网站来获得这些信息。这些信息将帮助您快速解决可能遇到的Lotus Notes/Domino产品问题。您可以在如下链接找
+到之前发送过的技术知识文档的内容：
+　　http://www-900.ibm.com/cn/support/viewdoc/detail?DocId=1897668B27001
+
+这期的邮件包含如下主题： 
+
+1. 修订程序更新：
+-- Domino 8.5.1 Fix Pack 2 Interim Fix 1 发布
+2. 本月常见问答 （中文网站） 
+3. Lotus中文技术热点文章(前5名）
+4. 常用链接
+5. 反馈
+
+修订程序更新
+
+Domino 8.5.1 Fix Pack 2 Interim Fix 1 - DAOS 修订程序
+Domino 8.5.1 FP2 用户可能会遇到一些与 DAOS 相关的问题，在此修订程序包中得到了解决，
+推荐启用 DAOS 特性的用户下载并应用此修订程序，从而避免可能引发系统故障的问题发生。
+链接：http://www-01.ibm.com/support/docview.wss?uid=swg21426164
+Domino 8.5.1 Fix Pack 2 Interim Fix 1 - iNotes 修订程序
+用户在访问 iNotes 邮箱时可能会反复收到关于“Browser Cache Management(浏览器缓存管理)”
+的提示信息，这个问题在此修订程序包中得到了解决。推荐在 Windows 平台上通过 Internet 
+Explorer 浏览器访问 iNotes 邮箱的用户下载并应用此修订程序。
+链接: http://www-01.ibm.com/support/docview.wss?uid=swg21428777
+
+请参考以下文档，了解关于Notes/Domino的维护版本，修订程序包，客户端累积性修订程序的区别：
+链接：http://www-900.ibm.com/cn/support/viewdoc/detail?DocId=1897660A04000
+
+本月常见问答 （中文网站） 
+
+标题：能否对更改internet密码所需的缓存时间进行调整？
+链接：http://www-900.ibm.com/cn/support/viewdoc/detail?DocId=1897668K15000
+
+标题：复制时未读标记没有同步
+链接：http://www-900.ibm.com/cn/support/viewdoc/detail?DocId=1897679E19001
+
+标题：Web SSO文档中的“最小超时”域
+链接：http://www-900.ibm.com/cn/support/viewdoc/detail?DocId=2897664D27000
+
+标题：在多台服务器发生宕机时显示错误信息："PANIC: LookupHandle: null handle" （紧急：查询句柄为空）
+链接：http://www-900.ibm.com/cn/support/viewdoc/detail?DocId=1997669I21000
+
+标题：Lotus Notes所验证过的数据库的最大大小为64GB，但实际大小会受文件系统的限制
+链接：http://www-900.ibm.com/cn/support/viewdoc/detail?DocId=1697665G20000
+
+
+Lotus中文技术热点文章(前5名）
+
+Lotus中文技术知识库网站得到了大家的热情支持和访问，以下是点击率最高的前5篇文章。
+
+1.一个关于删除日历简要表的样例
+http://www-900.ibm.com/cn/support/viewdoc/detail?DocId=1897667L05000
+
+2.改进请求：在Lotus Notes文档中加入放大字体的功能
+http://www-900.ibm.com/cn/support/viewdoc/detail?DocId=1847670A26000
+
+3.新建拷贝和新建复本的区别
+http://www-900.ibm.com/cn/support/viewdoc/detail?DocId=1307010000051
+
+4.Lotus Notes/Domino发生故障时常用的数据收集步骤
+http://www-900.ibm.com/cn/support/viewdoc/detail?DocId=1897668A07000
+
+5.Lotus Domino 服务器的文档精选
+http://www-900.ibm.com/cn/support/viewdoc/detail?DocId=1897660B27003
+
+
+常用链接 
+
+您可以在下面地址查找到Lotus Notes/Domino的相关常用链接。 
+http://www-900.ibm.com/cn/support/viewdoc/detail?DocId=1697669G29000
+
+
+反馈 
+
+如果您对这类邮件有任何意见和建议，您可以发送邮件至lotusfaq@cn.ibm.com告诉我们。 

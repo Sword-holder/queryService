@@ -1,0 +1,34 @@
+你可以尝试修复该数据库或者恢复一个备份的拷贝。
+
+1. 修复损坏的数据库：
+
+有两种方法：
+
+a. 从Domino服务器控制台输入以下命令：
+
+load fixup vpuserinfo.nsf                                                
+load updall -r vpuserinfo.nsf                                           
+load compact vpuserinfo.nsf 
+
+b. 从服务器的DOS命令窗口运行以下命令：
+
+把当前目录转到Domino/Sametime的程序目录：（例如 
+c:\Lotus\Domino)                                                        
+输入以下命令：                                
+                                                                        
+nfixup.exe c:\Lotus\Domino\Data\vpuserinfo.nsf                          
+nupdall.exe -r c:\Lotus\Domino\Data\vpuserinfo.nsf                      
+ncompact.exe c:\Lotus\Domino\Data\vpuserinfo.nsf    
+
+注意：有些客户不把数据目录放在\Lotus\Domino\Data下面，运行命令前请确保命令指向vpuserinfo.nsf数据库所在的目录。
+
+2. 从备份的拷贝恢复该数据库：
+
+注意：备份的数据库只保留了备份时候的用户的联系人列表。备份以后修改的联系人将无法恢复。  
+                  
+- 把已知的可用的备份拷贝出来。
+- 把现有的损坏的数据库重命名为vpuserinfo.old.
+- 把备份的拷贝放到服务器上。
+- 重启Sametime服务器。你可以用以下命令重启Sametime服务器而不需要重启Domino:
+tell staddin q
+load staddin
