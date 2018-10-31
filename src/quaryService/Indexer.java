@@ -1,7 +1,5 @@
 package quaryService;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Paths;
 
 import org.apache.lucene.analysis.Analyzer;
@@ -51,7 +49,14 @@ public class Indexer {
 	//这个方法是生成Document对象的方法，Document对象就是对文档各个属性的封装
 	protected Document getDocument(File file, String fieldName) throws IOException{
 		Document doc=new Document();
-		doc.add(new Field(fieldName, new FileReader(file),TextField.TYPE_NOT_STORED));
+		BufferedReader reader = new BufferedReader(new InputStreamReader(
+				new FileInputStream(file), "UTF-8"));
+		String line = "";
+		StringBuffer content = new StringBuffer();
+		while ((line = reader.readLine()) != null) {
+			content.append(line);
+		}
+		doc.add(new Field(fieldName, content+"", TextField.TYPE_NOT_STORED));
 		doc.add(new Field("filename",file.getName(),TextField.TYPE_STORED));
 		doc.add(new Field("fullpath",file.getCanonicalPath(),TextField.TYPE_STORED));
 		return doc;
@@ -60,7 +65,7 @@ public class Indexer {
 	
 	
 	public static void main(String[] args) throws IOException {
-		String[] fieldNameList = {"description"};
+		String[] fieldNameList = {"description", "production", "edition", "platform"};
 		String indexDir="index";
 		Indexer indexer=new Indexer(indexDir);
 		for (String fieldName:fieldNameList) {
