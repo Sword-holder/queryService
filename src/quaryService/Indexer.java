@@ -3,6 +3,7 @@ import java.io.*;
 import java.nio.file.Paths;
 
 import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.cn.smart.SmartChineseAnalyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
@@ -19,7 +20,7 @@ public class Indexer {
 	
 	public Indexer(String indexDir) throws IOException {//构造方法
 		Directory dir = FSDirectory.open(Paths.get(indexDir));//打开一个文件夹，用于存放索引
-		IndexWriterConfig config = new IndexWriterConfig(new StandardAnalyzer());//采用标准分词器
+		IndexWriterConfig config = new IndexWriterConfig(new SmartChineseAnalyzer());//采用标准分词器
 		config.setOpenMode(OpenMode.CREATE);//配置打开方式
 		writer = new IndexWriter(dir, config);//创建IndexWriter，第一个参数为存放目录，第二个参数为配置
 	}
