@@ -86,26 +86,33 @@ public class Searcher {
 	}
 	
 	public static String getAnswer(String query) throws IOException, ParseException {
-		String response = "";
+		String response = "next";
 		ArrayList<String> answerlist = null;
 		ArrayList<String> tempanswer = null;
 		String[] info = query.split("\n");
-		for (String desp:info) {
+		for (String desp:info) { //desp是用户的每一句话
 			String field = desp.split(":")[0];
 			String cont = desp.split(":")[1];
-			if (answerlist == null) {
+			if (field.equals("description")) {
 				answerlist = search(indexDir, cont, field);
+			}
+			else if (field.equals("platform")) { //对操作系统进行诊断
+				String ans = answerlist.get(0);
+				String expected_platform = read_content("info\\platform\\" + ans);
+				if (expected_platform.equals(cont)) {
+					return answerlist.get(0);
+				}
+				else {
+					return "您的运行平台有问题，应当是" + expected_platform;
+				}
 			}
 			else {
 				tempanswer = search(indexDir, cont, field);
 				intersection(answerlist, tempanswer);
 			}
 		}
-		if (answerlist.size() == 0) {//没有找到答案
-			response = noAnswer();
-		}
-		else {
-			response = answerlist.get(0);
+		if () {
+			
 		}
 		return response;
 	}
