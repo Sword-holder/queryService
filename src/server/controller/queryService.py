@@ -36,8 +36,12 @@ def query():
     if response['ack'].endswith('disc'): #主动断开连接
         response['disc'] = True
         response['ack'] = response['ack'][0:-4]
-        if response['ack'] == 'sorry':
+        if response['ack'] == 'sorry': # 没有找到答案
             response['ack'] = SORRY_STR
+        else:
+            with open('info/answer/' + response['ack'], 'rb') as f:
+                response['ack'] = str(f.read(), encoding='utf-8') 
+
     return jsonify(response)
 
 

@@ -32,6 +32,7 @@ public class SocketServer {
 	    byte[] bytes = new byte[65536];
 	    int len;
 	    StringBuilder sb = new StringBuilder();
+	    System.out.println("等待读取数据。。");
 	    len = inputStream.read(bytes);
 	    //编码使用utf-8
 	    sb.append(new String(bytes, 0, len,"UTF-8"));

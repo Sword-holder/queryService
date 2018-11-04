@@ -44,6 +44,10 @@ public class Searcher {
 				filelist.add(filename);
 			}
 		}
+		System.out.println("搜索到的答案有：");
+		for (String file:filelist) {
+			System.out.println(file);
+		}
 		return filelist;
 	}
 	

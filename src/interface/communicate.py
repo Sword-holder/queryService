@@ -3,7 +3,7 @@ import socket
 def send_query(query):
     print('准备开始连接。。。')
     client = socket.socket()#声明socket类型，同时生成socke连接t对象
-    client.connect(('localhost', 55533))  #连接到localhost主机的55522端口
+    client.connect(('localhost', 55533))  #连接到localhost主机的55533端口
     print('连接已建立。。。')
 
     client.send(query.encode('utf-8'))
