@@ -3,13 +3,25 @@
 # 运行环境
 - python3
 - jdk8
+- Window或Linux
 # 使用方式
 ### 1、将项目clone到本地，解压  
-### 2、打开terminal，运行java搜索程序  
-### 3、再开一个terminal，运行python服务器程序  
+### 2、编译运行java搜索程序  
+用IDE打开项目所在文件夹，编译运行SocketServer.java程序  
+### 3、打开一个terminal，运行python服务器程序  
+进入项目文件夹目录  
+执行python服务器代码  
+```
+python src/run.py
+```
 ### 4、再开一个terminal，运行测试程序  
+```
+python src/server/test/test.py
+```
 ### 5、输入问题，等待回答  
-因为手动处理文档工作量大，目前仅处理了**前25个问题**，作为Demo
+根据提示输入问题即可  
+因为手动处理文档工作量大，目前仅处理了**前25个问题**，作为Demo  
+# 效果截图
 # 工作原理
 系统分为前端和后端，前端负责接口呈现、与用户进行交互的部分，后端负责搜索答案的部分。  
 前端采用python的flask框架，它用于接受请求，并交给后端处理。  

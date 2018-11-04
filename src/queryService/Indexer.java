@@ -1,4 +1,4 @@
-package quaryService;
+package queryService;
 import java.io.*;
 import java.nio.file.Paths;
 
