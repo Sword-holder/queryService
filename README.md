@@ -10,7 +10,7 @@
 git clone git@github.com:Sword-holder/queryService.git
 ```
 ### 2、编译运行java搜索程序  
-用Eclipse或者其它IDE打开项目所在文件夹，编译运行SocketServer.java程序  
+用Eclipse或者其它IDE打开项目所在文件夹，编译运行SocketServer程序  
 ### 3、打开一个terminal，运行python服务器程序  
 进入项目文件夹目录  
 执行python服务器代码  
@@ -56,6 +56,7 @@ Domino SMTP服务器多长时间会检查SMTP配置信息是否被更新呢？�
 - 使用Lotus Notes Traveler时有什么数据可以存放在内存卡/存储卡中？
 - 迁移后被归档的文档出现在“所有文档”文件夹中当您将一组用户从 Domino R5 迁移到 Domino 6.5.1后，您发现他们的已经被归档的文档出现在“所有文档”文件夹中，而不是在其指定的文件夹中。直接在 Domino 6 版本中注册的用户 (相对于被迁移的用户)则没有这个问题。
 # 运行效果截图
+
 # 工作原理
 系统分为前端和后端，前端负责接口呈现、与用户进行交互的部分，后端负责搜索答案的部分。采用分离的原因一方面是可以使系统功能模块更加明确，另一方面是可以做一个分布式系统  
 前端采用python的flask框架，它用于接受请求，并交给后端处理。  

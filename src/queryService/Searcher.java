@@ -93,7 +93,7 @@ public class Searcher {
 			return giveAnswer(answerlist);
 		}
 		else {
-			return "您的运行平台有问题，应当是" + expected_platform;
+			return "platformerror";
 		}
 	}
 	

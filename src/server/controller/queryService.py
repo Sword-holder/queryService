@@ -12,6 +12,7 @@ QUERY_STR = (
 )
 EXIT_STR = '很高兴为您服务，再见！'
 SORRY_STR = '很抱歉，没有找到合适的答案'
+PLATFORM_ERROR_STR = '您的运行平台有问题，请检查'
 
 @app.route('/queryService/connect', methods=['GET'])
 def connect():
@@ -32,6 +33,8 @@ def query():
     response['code'] = 0
     if response['ack'] == 'next':
         response['ack'] = QUERY_STR[find_question_no(uid)]
+    if response['ack'].startswith('platformerror'):
+        response['ack'] = PLATFORM_ERROR_STR
     response['disc'] = False
     if response['ack'].endswith('disc'): #主动断开连接
         response['disc'] = True
