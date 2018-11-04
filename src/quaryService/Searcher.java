@@ -36,16 +36,20 @@ public class Searcher {
 		Query q=parser.parse(query);
 		TopDocs hits=searcher.search(q, 10);
 		ArrayList<String> filelist = new ArrayList<String>();
-		for(ScoreDoc scoreDoc:hits.scoreDocs){
+		float maxscore = hits.getMaxScore();
+		for(ScoreDoc scoreDoc:hits.scoreDocs) {
 			Document doc=searcher.doc(scoreDoc.doc);
-			String filename = doc.get("filename");
-			filelist.add(filename);
+			if (scoreDoc.score / maxscore > 0.5) {
+				String filename = doc.get("filename");
+				filelist.add(filename);
+			}
 		}
 		return filelist;
 	}
 	
 	public static String noAnswer() {
-		return "不好意思，没有帮您找到合适的答案";
+		String sorry = "sorry";
+		return sorry + "disc";
 	}
 	
 	//读取文本
@@ -58,13 +62,6 @@ public class Searcher {
 			content.append(line);
 		}
 		return content + "";
-	}
-	
-	public static void give_answer(String filename) throws IOException {
-		String filepath = answerDir + "\\" + filename;
-		String ans = read_content(filepath);
-		System.out.println(ans);
-		System.exit(0);
 	}
 	
 	//两个集合地交集，结果放在第一个集合里
@@ -85,11 +82,37 @@ public class Searcher {
 		}
 	}
 	
-	public static String getAnswer(String query) throws IOException, ParseException {
+	public static String diagnosis(ArrayList<String> answerlist, String cont) throws Exception {
+		String ans = answerlist.get(0);
+		String expected_platform = read_content("info\\platform\\" + ans);
+		if (expected_platform.equals(cont)) {
+			return giveAnswer(answerlist);
+		}
+		else {
+			return "您的运行平台有问题，应当是" + expected_platform;
+		}
+	}
+	
+	public static boolean overwhelm(ArrayList<String> answerlist) {
+		if (answerlist.size() == 1) {
+			return true;
+		}
+		return false;
+	}
+	
+	public static String giveAnswer(ArrayList<String> answerlist) {
+		return answerlist.get(0) + "disc";
+	}
+	
+	public static String getAnswer(String query) throws IOException, ParseException, Exception {
 		String response = "next";
 		ArrayList<String> answerlist = null;
 		ArrayList<String> tempanswer = null;
+		boolean diagnose = false;
 		String[] info = query.split("\n");
+		if (info.length > 0 && info[info.length - 1].equals("diagnose"))
+			diagnose = true;
+			
 		for (String desp:info) { //desp是用户的每一句话
 			String field = desp.split(":")[0];
 			String cont = desp.split(":")[1];
@@ -97,27 +120,24 @@ public class Searcher {
 				answerlist = search(indexDir, cont, field);
 			}
 			else if (field.equals("platform")) { //对操作系统进行诊断
-				String ans = answerlist.get(0);
-				String expected_platform = read_content("info\\platform\\" + ans);
-				if (expected_platform.equals(cont)) {
-					return answerlist.get(0);
-				}
-				else {
-					return "您的运行平台有问题，应当是" + expected_platform;
-				}
+				return diagnosis(answerlist, cont);
 			}
 			else {
 				tempanswer = search(indexDir, cont, field);
 				intersection(answerlist, tempanswer);
 			}
-		}
-		if () {
 			
+			if (answerlist.size() == 0) { //没有搜索到答案
+				return noAnswer();
+			}
+			if (overwhelm(answerlist) && !diagnose) { //如果确定是第一项，就直接给出答案
+				return giveAnswer(answerlist);
+			}
 		}
 		return response;
 	}
 
-	public static void main(String[] args) throws IOException, ParseException {
+	public static void main(String[] args) throws IOException, ParseException, Exception {
 		String description = "description:宕机";
 		String production = "production:IBM Notes";
 		String edition = "edition:9.0";

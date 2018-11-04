@@ -5,6 +5,8 @@ import java.io.OutputStream;
 import java.net.*;
 
 public class SocketServer {
+	static ServerSocket server;
+	
 	public static void response(String response, Socket client) throws Exception {
 		
 	    String ip = client.getLocalAddress().getHostAddress();
@@ -20,7 +22,7 @@ public class SocketServer {
 	public static void listen() throws Exception {
 		// 监听指定的端口
 	    int port = 55533;
-	    ServerSocket server = new ServerSocket(port);
+	    server = new ServerSocket(port);
 	    
 	    // server将一直等待连接的到来
 	    System.out.println("server将一直等待连接的到来");
@@ -47,6 +49,10 @@ public class SocketServer {
 	    socket.close();
 	    server.close();
 	} 
+	
+	public void finalize() throws Exception {
+	    server.close();
+	}
 	    
 	    
 	public static void main(String[] args) throws Exception {

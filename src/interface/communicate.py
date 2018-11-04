@@ -11,6 +11,7 @@ def send_query(query):
     response = client.recv(2048)
     print("从服务器接收到的数据为：", response.decode())
     client.close()
+    return str(response, 'utf-8')
 
 if __name__ == '__main__':
     send_query(query="description:宕机\nproduction:IBM Notes\nedition:9.0\nplatform:Mac OS")
