@@ -6,8 +6,11 @@
 - Window或Linux
 # 使用方式
 ### 1、将项目clone到本地，解压  
+```
+git clone git@github.com:Sword-holder/queryService.git
+```
 ### 2、编译运行java搜索程序  
-用IDE打开项目所在文件夹，编译运行SocketServer.java程序  
+用Eclipse或者其它IDE打开项目所在文件夹，编译运行SocketServer.java程序  
 ### 3、打开一个terminal，运行python服务器程序  
 进入项目文件夹目录  
 执行python服务器代码  
